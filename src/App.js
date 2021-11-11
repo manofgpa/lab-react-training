@@ -1,15 +1,19 @@
 import React from 'react'
 import { BoxColor } from './components/BoxColor'
-import { ClickablePicture } from './components/ClickablePicture'
 import { CreditCard } from './components/CreditCard'
 import { DriverCard } from './components/DriverCard'
-import { Greetings } from './components/Greetings'
 import { IdCard } from './components/IdCard'
-import { LikeButton } from './components/LikeButton'
 import { Random } from './components/Random'
 import { Rating } from './components/Rating'
 import data from './data/berlin.json'
 
+import { Greetings } from './components/Greetings'
+import { ClickablePicture } from './components/ClickablePicture'
+import { LikeButton } from './components/LikeButton'
+import { Dice } from './components/Dice'
+import { Carousel } from './components/Carousel'
+import { NumbersTable } from './components/NumbersTable'
+import { Facebook } from './components/Facebook'
 
 
 function App() {
@@ -19,12 +23,16 @@ function App() {
       {data.map(user => (
         <IdCard data={user} />
       ))}
+
       <h1>Iteration 2</h1>
       <Greetings lang={'de'} >Felipe</Greetings>
+
       <h1>Iteration 3</h1>
       <Random min={1} max={100} />
+
       <h1>Iteration 4</h1>
       <BoxColor r={14} g={223} b={102} />
+
       <h1>Iteration 5</h1>
       <div style={{ display: 'flex' }}>
         <CreditCard
@@ -55,6 +63,7 @@ function App() {
           bgColor="#ddbb55"
           color="white" />
       </div>
+
       <h1>Iteration 6</h1>
       <Rating>0</Rating>
       <Rating>1.49</Rating>
@@ -62,6 +71,7 @@ function App() {
       <Rating>3</Rating>
       <Rating>4</Rating>
       <Rating>5</Rating>
+
       <h1>Iteration 7</h1>
       <DriverCard
         name="Travis Kalanick"
@@ -79,15 +89,35 @@ function App() {
           model: "Audi A3",
           licensePlate: "BE33ER"
         }} />
+
       <h1>Iteration 8</h1>
       <LikeButton />
+
       <h1>Iteration 9</h1>
       <ClickablePicture
-        img='/img/persons/maxence.png'
-        imgClicked='/img/persons/maxence-glasses.png'
+        img='img/persons/maxence.png'
+        imgClicked='img/persons/maxence-glasses.png'
       />
+
       <h1>Iteration 10</h1>
-      {/* <Dice /> */}
+      <Dice />
+
+      <h1>Iteration 11</h1>
+      <Carousel
+        imgs={[
+          'https://randomuser.me/api/portraits/women/1.jpg',
+          'https://randomuser.me/api/portraits/men/1.jpg',
+          'https://randomuser.me/api/portraits/women/2.jpg',
+          'https://randomuser.me/api/portraits/men/2.jpg'
+        ]}
+      />
+
+      <h1>Iteration 12</h1>
+      <NumbersTable limit={19} />
+
+      <h1>Iteration 13</h1>
+      <Facebook />
+
     </div>
   )
 }
